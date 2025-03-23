@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "title": "White Chair",
+      "summary": "Comfy white chair",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "title": "Yellow chair",
+      "summary": "Relaxing.",
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
