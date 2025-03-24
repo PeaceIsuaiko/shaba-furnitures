@@ -1,14 +1,14 @@
 [
     {
       "id": 1,
-      "title": "White Chair",
-      "summary": "Comfy white chair",
-      "image": ""
+      "title": "A portable room locker",
+      "price": "#70,000",
+      "image": "locker.png"
     },
     {
-      "id": 2,
-      "title": "Yellow chair",
-      "summary": "Relaxing.",
-      "image": "https://via.placeholder.com/150"
-    }
+        "id": 1,
+        "title": "A portable room locker",
+        "price": "#70,000",
+        "image": "locker.png"
+      }
   ]
