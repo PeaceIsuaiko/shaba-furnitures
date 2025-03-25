@@ -1,11 +1,13 @@
 import Header from "./Header";
 import ShowCase from "./ShowCase";
+import Choose from "./Choose"
 
 const HomePage = () => {
   return (
     <div>
-      <Header pathwr/>
+      <Header />
       <ShowCase />
+      <Choose />
     </div>
   );
 };
