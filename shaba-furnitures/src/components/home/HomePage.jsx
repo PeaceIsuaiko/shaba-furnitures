@@ -1,9 +1,11 @@
 import Header from "./Header";
+import ShowCase from "./ShowCase";
 
 const HomePage = () => {
   return (
     <div>
-      <Header />
+      <Header pathwr/>
+      <ShowCase />
     </div>
   );
 };
