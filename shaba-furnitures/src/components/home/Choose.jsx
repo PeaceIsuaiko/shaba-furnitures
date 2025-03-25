@@ -9,26 +9,26 @@ const Choose = () => {
           
           {/* Feature 1 */}
           <div className="bg-black p-6 shadow-lg rounded-lg hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center text-center">
-            <img src="/path-to-icon1.png" alt="Customization Icon" className="w-12 h-12 mb-4" />
             <p className="text-gray-300 text-sm">
               Get furniture tailored to your style and space. No one-size-fits-all!
             </p>
+            <img src="/path-to-icon1.png" alt="Customization Icon" className="w-12 h-12 mb-4" />
           </div>
   
           {/* Feature 2 */}
           <div className="bg-black p-6 shadow-lg rounded-lg hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center text-center">
-            <img src="/path-to-icon2.png" alt="Fast Delivery Icon" className="w-12 h-12 mb-4" />
             <p className="text-gray-300 text-sm">
               We deliver your furniture quickly and safely—no long waiting times!
             </p>
+            <img src="/path-to-icon2.png" alt="Fast Delivery Icon" className="w-12 h-12 mb-4" />
           </div>
   
           {/* Feature 3 (Example) */}
           <div className="bg-black p-6 shadow-lg rounded-lg hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center text-center">
-            <img src="/path-to-icon3.png" alt="Quality Icon" className="w-12 h-12 mb-4" />
             <p className="text-gray-300 text-sm">
               We use the highest quality materials for long-lasting furniture.
             </p>
+            <img src="/path-to-icon3.png" alt="Quality Icon" className="w-12 h-12 mb-4" />
           </div>
   
         </div>
