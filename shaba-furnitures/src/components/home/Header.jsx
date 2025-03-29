@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {Link} from "react-router-dom"
 import logo from "../../assets/logo.png";  
 import firstback from "../../assets/firstback.jpeg";  
 
@@ -30,16 +31,17 @@ const Header = () => {
     isOpen ? "block" : "hidden"
   } md:block flex justify-end pr-20`}
 >
-  <a href="#about" className="text-black block md:inline-block text-2xl md:text-3xl font-bold">
-    About
-  </a>
-  <a href="#products" className="text-pink block md:inline-block text-2xl md:text-3xl font-bold">
+  <Link to="/" className="text-black block md:inline-block text-2xl md:text-3xl font-bold">
+    Home
+  </Link>
+  <Link to="/product" className="text-pink block md:inline-block text-2xl md:text-3xl font-bold">
     Products
-  </a>
-  <a href="#contact" className="text-black block md:inline-block text-2xl md:text-3xl font-bold">
-    Contact
-  </a>
+  </Link>
+  <Link to="/cart" className="text-black block md:inline-block text-2xl md:text-3xl font-bold">
+    Cart
+  </Link>
 </nav>
+
 
         </div>
       </header>

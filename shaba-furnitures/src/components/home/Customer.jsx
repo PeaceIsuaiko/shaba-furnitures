@@ -36,17 +36,7 @@ const Customer = () => {
   
         </div>
   
-        {/* Call to Action */}
-        <div className="mt-10 flex flex-row items-center">
-        <a 
-            href="userproductcustomizationquizpage" 
-            className="bg-yellow-500 text-black font-semibold px-5 py-3 rounded-full hover:bg-yellow-400 hover:text-gray-900 transition duration-300"
-          >
-            Find
-          </a>
-          <h2 className="text-xl font-semibold text-black ml-4"> Your Perfect Furniture Today</h2>
-         
-        </div>
+       
       </div>
     );
   };
