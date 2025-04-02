@@ -1,0 +1,6 @@
+[submodule "nft-project/lib/forge-std"]
+	path = nft-project/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "nft/nft-test-project/lib/forge-std"]
+	path = nft/nft-test-project/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
