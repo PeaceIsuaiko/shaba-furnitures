@@ -17,12 +17,12 @@ function SearchBar({ onSearch }) {
         placeholder="Search products"
         className="py-2 px-4 border border-gray-400 rounded"
       />
-     <Button  <button
+     <Button  
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={handleSearch}
       >
         <img src="" alt="clickable search icon" />
-      </button> />
+      </Button>
     </div>
   );
 }

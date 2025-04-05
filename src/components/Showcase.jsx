@@ -1,9 +1,9 @@
 import React from "react";
-import ProductCard from "./ProductCard"; // Assuming you've created a ProductCard component
-import products from "../api/products.json"; // Assuming you have your products data here
+import ProductCard from "./ProductCard"; 
+import products from "../api/products.json"; 
 
 const Showcase = () => {
-  // Selecting only the first two products
+ 
   const firstTwoProducts = products.slice(0, 2);
 
   return (

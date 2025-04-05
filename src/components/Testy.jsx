@@ -1,20 +1,17 @@
 import React from "react";
-
+import { FaUserCircle } from "react-icons/fa"; 
 const Testy = () => {
   const testimonials = [
     {
       name: "John Doe",
-      image: "https://via.placeholder.com/150", // Replace with actual customer image
       text: "Shaba Furnitures completely transformed my living room! The quality is amazing and the customer service was excellent. Highly recommend!",
     },
     {
       name: "Jane Smith",
-      image: "https://via.placeholder.com/150", // Replace with actual customer image
       text: "I love my new furniture! It was easy to find exactly what I needed at a price that fit my budget. Thank you, Shaba!",
     },
     {
       name: "Chris Johnson",
-      image: "https://via.placeholder.com/150", // Replace with actual customer image
       text: "The best shopping experience! The furniture is top-notch and the delivery was fast. I'm so happy with my purchase!",
     },
   ];
@@ -29,11 +26,7 @@ const Testy = () => {
               key={index}
               className="bg-white shadow-lg p-6 rounded-lg flex flex-col items-center justify-center"
             >
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-24 h-24 rounded-full mb-4"
-              />
+              <FaUserCircle className="text-gray-400 w-24 h-24 mb-4" />
               <p className="text-lg font-medium text-gray-600 mb-4">"{testimonial.text}"</p>
               <h3 className="text-xl font-semibold text-gray-800">{testimonial.name}</h3>
             </div>

@@ -1,12 +1,12 @@
-// src/components/BackButton.jsx
+
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook for navigation
+import { useNavigate } from "react-router-dom"; 
 
 const BackB = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleGoBack = () => {
-    navigate(-1); // Go back to the previous page
+    navigate(-1); 
   };
 
   return (

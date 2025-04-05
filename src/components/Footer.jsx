@@ -1,30 +1,30 @@
-// src/components/Footer.jsx
+
 import React from 'react';
 import logo from '../assets/images/shaba.png';
 import Button from './Button';
 
 const Footer = () => {
   const handleCustomSearch = () => {
-    // Simulate linking to external search page or modal
+   
     alert("Redirecting to external product search...");
   };
 
   return (
     <footer className="bg-gray-900 text-white py-10 mt-10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-        {/* CTA Box */}
+       
+
         <div className="max-w-md">
          <Button 
-          <button
+          
             onClick={handleCustomSearch}
             className="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700"
           >
             Find
-          </button> />
+          </ Button>
           <p className="text-gray-400 mb-4">Your Perfect Furniture Today!</p>
         </div>
 
-        {/* Logo and links */}
         <div className="text-center md:text-left">
           <img src={logo} alt="Shaba Logo" className="h-10 mx-auto md:mx-0 mb-4" />
          

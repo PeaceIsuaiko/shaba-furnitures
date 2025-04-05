@@ -1,10 +1,13 @@
-export const searchExternalProducts = async (query) => {
+
+import axios from 'axios';
+
+const searchExternalProducts = async (query, searchType) => {
   try {
-    const response = await fetch(`https://api.example.com/products?search=${query}`);
-    const data = await response.json();
-    return data.products || [];
+    const response = await axios.get(`https://api.example.com/products?${searchType}=${query}`);
+    return response.data;
   } catch (error) {
-    console.error("Error fetching external products:", error);
-    return [];
+    throw error;
   }
 };
+
+export { searchExternalProducts };

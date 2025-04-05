@@ -1,15 +1,26 @@
-import React from 'react';
-import Button from "./Button"
 
-const ProductCard = ({ product, onAddToCart }) => {
+import React from 'react';
+import Button from './Button';
+import CartApi  from '../api/CartApi';
+
+function ProductCard({ product }) {
+  const handleAddToCart = async () => {
+    try {
+      await CartApi.addProductToCart(product);
+      console.log('Product added to cart');
+    } catch (error) {
+      console.error('Error adding product to cart:', error);
+    }
+  };
+
   return (
     <div className="bg-white shadow-md p-4 rounded">
-      <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded mb-4" />
-      <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-      <p className="font-bold mb-4">${product.price}</p>
-      <Button Add To Cart />
+      <h2 className="text-2xl font-bold">{product.name}</h2>
+      <p className="text-lg font-bold">{product.description}</p>
+      <p className="text-lg font-bold">${product.price}</p>
+      <Button onClick={handleAddToCart}>Add to Cart</Button>
     </div>
   );
-};
+}
 
 export default ProductCard;
