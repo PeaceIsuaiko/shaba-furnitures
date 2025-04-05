@@ -1,17 +1,46 @@
 // src/components/Footer.jsx
+import React from 'react';
+import logo from '../assets/images/shaba.png';
+import Button from './Button';
+
 const Footer = () => {
-    return (
-      <footer className="bg-gray-800 text-white p-4">
-        <div className="container mx-auto text-center">
-          <p>&copy; 2025 Shaba Furnitures. All rights reserved.</p>
-          <p>
-            <a href="/terms" className="text-gray-400 hover:text-white">Terms of Service</a> | 
-            <a href="/privacy" className="text-gray-400 hover:text-white">Privacy Policy</a>
-          </p>
-        </div>
-      </footer>
-    );
+  const handleCustomSearch = () => {
+    // Simulate linking to external search page or modal
+    alert("Redirecting to external product search...");
   };
-  
-  export default Footer;
-  
+
+  return (
+    <footer className="bg-gray-900 text-white py-10 mt-10">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        {/* CTA Box */}
+        <div className="max-w-md">
+         <Button 
+          <button
+            onClick={handleCustomSearch}
+            className="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Find
+          </button> />
+          <p className="text-gray-400 mb-4">Your Perfect Furniture Today!</p>
+        </div>
+
+        {/* Logo and links */}
+        <div className="text-center md:text-left">
+          <img src={logo} alt="Shaba Logo" className="h-10 mx-auto md:mx-0 mb-4" />
+         
+          <div className="text-gray-500 text-sm">
+            <a href="#" className="hover:underline">Privacy Policy</a>
+          </div>
+          <div className="flex justify-center md:justify-start gap-4 mb-2">
+            <a href="#" className="hover:text-blue-400">Facebook</a>
+            <a href="#" className="hover:text-blue-400">Twitter</a>
+            <a href="#" className="hover:text-blue-400">Instagram</a>
+          </div>
+          <p className="text-xs text-gray-500 mt-2">&copy; 2025 Shaba Furnitures. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

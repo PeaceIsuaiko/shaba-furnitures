@@ -1,5 +1,8 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: []
-})
+  // Change the port number
+  server: {
+    port: 3001,
+  },
+});

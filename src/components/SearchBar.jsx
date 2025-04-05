@@ -1,25 +1,30 @@
-// src/components/SearchBar.jsx
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Button from './Button';
 
-const SearchBar = ({ onSearch }) => {
+function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
 
-  const handleSearch = (event) => {
-    setQuery(event.target.value);
-    onSearch(event.target.value);
+  const handleSearch = () => {
+    onSearch(query);
   };
 
   return (
-    <div className="flex justify-center my-4">
+    <div className="flex items-center mb-4">
       <input
         type="text"
-        placeholder="Search products..."
         value={query}
-        onChange={handleSearch}
-        className="px-4 py-2 border rounded-lg w-1/2"
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search products"
+        className="py-2 px-4 border border-gray-400 rounded"
       />
+     <Button  <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={handleSearch}
+      >
+        <img src="" alt="clickable search icon" />
+      </button> />
     </div>
   );
-};
+}
 
 export default SearchBar;
