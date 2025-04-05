@@ -1,13 +1,21 @@
+ import { db } from '../firebase';
+  import { collection, query, where, getDocs } from 'firebase/firestore';
 
-import axios from 'axios';
+  const searchExternalProducts = async (queryText, searchType) => {
+    try {
+      const productsRef = collection(db, 'products');
+      const q = query(
+        productsRef,
+        where(searchType, '>=', queryText),
+        where(searchType, '<=', queryText + '\uf8ff')
+      );
+      const querySnapshot = await getDocs(q);
+      const results = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      return results;
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      throw error;
+    }
+  };
 
-const searchExternalProducts = async (query, searchType) => {
-  try {
-    const response = await axios.get(`https://api.example.com/products?${searchType}=${query}`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-};
-
-export { searchExternalProducts };
+  export { searchExternalProducts };

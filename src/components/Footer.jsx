@@ -2,11 +2,13 @@
 import React from 'react';
 import logo from '../assets/images/shaba.png';
 import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
-  const handleCustomSearch = () => {
-   
-    alert("Redirecting to external product search...");
+  const navigate = useNavigate();
+
+  const handleOpenSearch = () => {
+    navigate('/product-search')
   };
 
   return (
@@ -17,7 +19,7 @@ const Footer = () => {
         <div className="max-w-md">
          <Button 
           
-            onClick={handleCustomSearch}
+            onClick={handleOpenSearch}
             className="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700"
           >
             Find

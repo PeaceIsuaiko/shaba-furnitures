@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
+import { searchExternalProducts } from '../api/ProductApi';
 
-function ProductSearch({ onClose, onSearch }) {
+function ProductSearch({ onClose, onResults}) {
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
-    onSearch(query);
+
+    try {
+        const results = await searchExternalProducts(query, 'product_name');
+        onResults(results);
+        navigate('/search-results');
+    } catch (error) {
+        console.error('Error fetching products:', error);
+    }
+
     onClose();
   };
 
