@@ -36,7 +36,7 @@ function Cart() {
   };
 
   const handleCheckout = () => {
-    // Trigger checkout functionality
+    
   };
 
   return (

@@ -13,13 +13,13 @@ function Hero() {
     >
 
       
-        <Nav />
+      
         
         <div>
-        <img src={logo} alt="Shaba Furnitures Logo" className="h-4" />
+        <img src={logo} alt="Shaba Furnitures Logo" className="h-12 w-10" />
         </div>
 
-      
+        <Nav />
         
        <div>
         <h2>Shaba Dey For You</h2>

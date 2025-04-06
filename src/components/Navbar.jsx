@@ -9,11 +9,11 @@ function Navbar() {
     <div 
       className="bg-cover bg-no-repeat bg-center h-32" 
     >
-      <nav className="bg-gray-800 bg-opacity-75 text-white p-4 flex justify-between items-center relative">
+      <nav className="text-white  flex justify-between items-center relative">
       
 
 
-        <div className={`absolute md:static top-16 right-4 bg-gray-800 text-white w-48 md:w-auto py-2 md:py-0 md:flex md:space-x-6 shadow-lg md:shadow-none rounded-lg md:rounded-none ${isOpen ? "block" : "hidden"} md:block`}>
+        <div className={`absolute md:static top-1 right-0  text-white w-48 md:w-auto py-2 md:py-0 md:flex md:space-x-6 shadow-lg md:shadow-none rounded-lg md:rounded-none ${isOpen ? "block" : "hidden"} md:block`}>
           <Link to="/" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">Home</Link>
           <Link to="/products" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">Products</Link>
           <Link to="/cart" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">Cart</Link>
