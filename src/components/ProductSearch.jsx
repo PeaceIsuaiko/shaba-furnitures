@@ -7,19 +7,21 @@ function ProductSearch({ onClose, onResults}) {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
+  
   const handleSearch = async (e) => {
     e.preventDefault();
-
+  
     try {
-        const results = await searchExternalProducts(query, 'product_name');
-        onResults(results);
-        navigate('/search-results');
+      const results = await searchExternalProducts(query, 'product_name');
+      onResults(results);
+      navigate('/search-results');
     } catch (error) {
-        console.error('Error fetching products:', error);
+      console.error('Error fetching products:', error);
     }
-
+  
     onClose();
   };
+
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">

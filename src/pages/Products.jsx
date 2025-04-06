@@ -2,7 +2,7 @@
   import React, { useState } from 'react';
   import Navbar from '../components/Navbar';
   import Footer from '../components/Footer';
-  import products from '../api/products.json'
+  import products from '../api/products.json';
   import ProductList from '../pages/ProductList';
   import BackB from '../components/BackB';
   import SearchBar from '../components/SearchBar';
@@ -27,8 +27,8 @@
 
     return (
       <div>
-        <Navbar />
         <BackB />
+        <Navbar />
         <div className="container mx-auto px-4 py-6">
           <SearchBar onSearch={handleSearch} />
           {searchError && <p className="text-red-500">{searchError}</p>}
