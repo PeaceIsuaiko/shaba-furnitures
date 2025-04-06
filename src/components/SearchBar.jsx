@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './Button';
 
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
+  const [debouncedQuery, setDebouncedQuery] = useState(query);
 
-  const handleSearch = () => {
-    onSearch(query);
-  };
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedQuery(query);
+    }, 300);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [query]);
+
+  useEffect(() => {
+    onSearch(debouncedQuery);
+  }, [debouncedQuery, onSearch]);
 
   return (
     <div className="flex items-center mb-4">
@@ -17,11 +28,11 @@ function SearchBar({ onSearch }) {
         placeholder="Search products"
         className="py-2 px-4 border border-gray-400 rounded"
       />
-     <Button  
+      <Button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={handleSearch}
+        onClick={() => onSearch(query)}
       >
-        <img src="" alt="clickable search icon" />
+        Search
       </Button>
     </div>
   );

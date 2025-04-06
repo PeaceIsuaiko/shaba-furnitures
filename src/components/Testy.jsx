@@ -24,7 +24,7 @@ const Testy = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg p-6 rounded-lg flex flex-col items-center justify-center"
+              className="bg-yellow-400 shadow-lg p-6 rounded-lg flex flex-col items-center justify-center"
             >
               <FaUserCircle className="text-gray-400 w-24 h-24 mb-4" />
               <p className="text-lg font-medium text-gray-600 mb-4">"{testimonial.text}"</p>

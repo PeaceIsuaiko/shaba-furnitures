@@ -10,7 +10,7 @@ function ProductList({ products }) {
         ))
       ) : (
         <p className="text-center text-gray-500">
-          No products found. Please try another keywords.
+          No products found. Please try another keyword.
         </p>
       )}
     </div>

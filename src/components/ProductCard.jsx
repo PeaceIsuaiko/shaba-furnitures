@@ -14,7 +14,7 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="bg-white shadow-md p-4 rounded">
+    <div className="bg-black shadow-md p-3 rounded text-white">
       <h2 className="text-2xl font-bold">{product.name}</h2>
       <p className="text-lg font-bold">{product.description}</p>
       <p className="text-lg font-bold">${product.price}</p>
