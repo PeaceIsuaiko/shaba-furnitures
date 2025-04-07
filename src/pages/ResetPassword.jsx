@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '../components/Button';
 import axios from 'axios';
 
 function ResetPassword() {
@@ -43,7 +44,7 @@ function ResetPassword() {
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Confirm Password"
           />
-          <button type="submit">Reset Password</button>
+          <Button type="submit">Reset Password</Button>
         </form>
       </div>
     </div>

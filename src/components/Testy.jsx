@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "./Container";
 import { FaUserCircle } from "react-icons/fa"; 
 const Testy = () => {
   const testimonials = [
@@ -22,14 +23,14 @@ const Testy = () => {
         <h2 className="text-3xl font-semibold text-gray-800 mb-8">What Our Customers Say</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <Container
               key={index}
               className="bg-yellow-400 shadow-lg p-6 rounded-lg flex flex-col items-center justify-center"
             >
               <FaUserCircle className="text-gray-400 w-24 h-24 mb-4" />
               <p className="text-lg font-medium text-gray-600 mb-4">"{testimonial.text}"</p>
               <h3 className="text-xl font-semibold text-gray-800">{testimonial.name}</h3>
-            </div>
+            </Container>
           ))}
         </div>
       </div>

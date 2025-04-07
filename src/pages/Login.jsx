@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '../components/Button';
 import axios from 'axios';
 
 function Login() {
@@ -35,7 +36,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
-          <button type="submit">Login</button>
+          <Button type="submit">Login</Button>
         </form>
       </div>
     </div>

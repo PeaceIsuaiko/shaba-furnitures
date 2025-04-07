@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "./Container";
 import { FaHeart, FaThumbsUp } from "react-icons/fa"; 
 
 const WhyUs = () => {
@@ -12,7 +13,7 @@ const WhyUs = () => {
          
 
 
-          <div className="bg-white shadow-lg p-8 rounded-lg flex flex-col items-center justify-center">
+          <Container className="bg-white shadow-lg p-8 rounded-lg flex flex-col items-center justify-center">
             <FaHeart className="text-red-500 text-5xl mb-4" />
             <h3 className="text-xl font-semibold text-gray-800 mb-4">
               Quality Furniture
@@ -21,11 +22,11 @@ const WhyUs = () => {
               We provide high-quality, durable furniture that enhances your
               living space with comfort and style.
             </p>
-          </div>
+          </Container>
           
         
         
-          <div className="bg-white shadow-lg p-8 rounded-lg flex flex-col items-center justify-center">
+          <Container className="bg-white shadow-lg p-8 rounded-lg flex flex-col items-center justify-center">
             <FaThumbsUp className="text-blue-500 text-5xl mb-4" />
             <h3 className="text-xl font-semibold text-gray-800 mb-4">
               Affordable Prices
@@ -34,7 +35,7 @@ const WhyUs = () => {
               Enjoy stylish and functional furniture at prices that fit your
               budget without compromising on quality.
             </p>
-          </div>
+          </Container>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '../components/Button';
 import axios from 'axios';
 
 function Register() {
@@ -59,7 +60,7 @@ function Register() {
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Phone"
           />
-          <button type="submit">Register</button>
+          <Button type="submit">Register</Button>
         </form>
       </div>
     </div>

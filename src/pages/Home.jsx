@@ -12,7 +12,7 @@ function Home() {
       <Showcase />
       <Whyus />
       <Testy />
-      <Footer />
+      <Footer  />
     </div>
   );
 }
