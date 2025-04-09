@@ -13,9 +13,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-yellow bg-black static">
-      <Container className="max-w-6xl mx-auto  flex flex-col md:flex-row  md:items-start gap-6">
-        <div className="flex flex-row justify-start">
+    <footer className="relative static text-yellow bg-black">
+      <Container className="max-w-6xl mx-auto  flex flex-col md:flex-row   gap-6">
+        <div className="flex flex-row p-l-25">
           <Button
             onClick={handleOpenSearch}
             className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mb-4"

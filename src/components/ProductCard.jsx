@@ -18,20 +18,20 @@ function ProductCard({ product }) {
   };
 
   const goToProductDetails = () => {
+    console.log('Navigating to:', `/products/${product.id}`);
     navigate(`/products/${product.id}`);
   };
 
   return (
    <div>
-    <a href="/productdetails">
-    <Container
+    <div
       className="bg-black shadow-md p-3 rounded text-white cursor-pointer"
       onClick={goToProductDetails}
     >
       <h2 className="text-2xl font-bold">{product.name}</h2>
       <p className="text-lg font-bold">${product.price}</p>
       <Button onClick={handleAddToCart}>Add to Cart</Button>
-    </Container></a>
+    </div>
    </div>
   );
 }

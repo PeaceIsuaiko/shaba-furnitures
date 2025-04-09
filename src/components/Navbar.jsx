@@ -9,10 +9,10 @@ function Navbar() {
       <nav className="text-white flex items-center relative">
         
 
-        <div className={`absolute md:static top-1 right-0 text-white w-48 md:w-auto py-2 md:py-0 md:flex md:space-x-6 shadow-lg md:shadow-none rounded-lg md:rounded-none ${isOpen ? "block" : "hidden"} md:block`}>
+        <div className={`absolute md:static top-1 right-0 text-black w-48 md:w-auto py-2 md:py-0 md:flex md:space-x-6 shadow-lg md:shadow-none rounded-lg md:rounded-none ${isOpen ? "block" : "hidden"} md:block`}>
           <Link to="/" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">Home</Link>
           <Link to="/products" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">Products</Link>
-          <Link to="/cart" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">Cart</Link>
+          <Link to="/cart" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">🛒</Link>
         </div>
 
    
@@ -21,7 +21,7 @@ function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg 
-            className="w-8 h-8 text-white" 
+            className="w-8 h-8 text-black" 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
             viewBox="0 0 24 24" 
