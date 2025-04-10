@@ -15,7 +15,7 @@ const WhyUs = () => {
 
           <Container className="bg-white shadow-lg p-8 rounded-lg flex flex-col items-center justify-center">
             <FaHeart className="text-red-500 text-5xl mb-4" />
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            <h3 className="text-xl font-semibold text-yellow-800 mb-4">
               Quality Furniture
             </h3>
             <p className="text-gray-600">
@@ -28,7 +28,7 @@ const WhyUs = () => {
         
           <Container className="bg-white shadow-lg p-8 rounded-lg flex flex-col items-center justify-center">
             <FaThumbsUp className="text-blue-500 text-5xl mb-4" />
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            <h3 className="text-xl font-semibold text-yellow-800 mb-4">
               Affordable Prices
             </h3>
             <p className="text-gray-600">

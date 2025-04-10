@@ -7,7 +7,7 @@ import back1 from "../assets/images/back1.jpeg";
 function Hero() {
   return (
     <div 
-      className="bg-cover bg-no-repeat bg-center h-96 transparent-"  // Changed h-200 to h-96
+      className="bg-cover bg-no-repeat bg-center h-96  brightness-50"  
       style={{ backgroundImage: `url(${back1})` }}
     >
       <div className="flex flex-row py-2">
@@ -15,9 +15,9 @@ function Hero() {
         <Nav/>
       </div>
 
-      <div className="text-center mt-8">
+      <div className="text-center mt-16">
         <h2 className="text-3xl font-bold text-white">Shaba Dey For You</h2>
-        <p className="mt-2 text-lg  text-yellow-400 ">Crafted with style, comfort and quality</p>
+        <p className="mt-2 text-lg  text-yellow-500 ">Crafted with style, comfort and quality</p>
       </div>
 
       <div className="flex px-20 mt-8 justify-end">

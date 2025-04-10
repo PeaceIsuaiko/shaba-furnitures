@@ -29,7 +29,7 @@ const Testy = () => {
             >
               <FaUserCircle className="text-gray-400 w-24 h-24 mb-4" />
               <p className="text-lg font-medium text-gray-600 mb-4">"{testimonial.text}"</p>
-              <h3 className="text-xl font-semibold text-gray-800">{testimonial.name}</h3>
+              <h3 className="text-xl font-semibold text-yellow-800">{testimonial.name}</h3>
             </Container>
           ))}
         </div>

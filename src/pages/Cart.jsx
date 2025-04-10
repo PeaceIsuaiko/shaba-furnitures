@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Summ from '../components/Summ';
-import BackB from '../components/BackB';
 import {
   getLocalCart,
   removeProductFromLocalCart,
@@ -12,6 +10,8 @@ import {
 
 function Cart() {
   const [cart, setCart] = useState([]);
+  const [subTotal, setSubTotal] = useState(0);
+  const [shipping, setShipping] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
@@ -20,11 +20,24 @@ function Cart() {
     updateTotal(cartData);
   }, []);
 
-  const updateTotal = (cartData) => {
-    const total = cartData.reduce(
+  const updateSubTotal = (cartData) => {
+    const subTotal = cartData.reduce(
       (acc, product) => acc + product.price * product.quantity,
       0
     );
+    setSubTotal(subTotal);
+  };
+
+  const updateShipping = (cartData) => {
+    const shipping = cartData.reduce((acc, product) =>
+       acc + product.price + 0.01,0);
+    setShipping(shipping);
+  };
+
+  const updateTotal = (cartData) => {
+    updateSubTotal(cartData);
+    updateShipping(cartData);
+    const total = subTotal + shipping;
     setTotalPrice(total);
   };
 
@@ -47,13 +60,12 @@ function Cart() {
   };
 
   const handleCheckout = () => {
-    alert('Checkout not implemented yet 😅');
+    alert('Checkout not implemented yet ');
   };
 
   return (
     <div>
-      <BackB />
-      <Navbar />
+      <Navbar className="flex" />
       <div className="container mx-auto p-4 pt-6">
         <h1 className="text-3xl font-bold mb-4">Cart</h1>
         <ul>
@@ -62,17 +74,19 @@ function Cart() {
               <div className="flex justify-between items-center">
                 <div>
                   <p className="text-lg font-semibold">{product.name}</p>
-                  <p className="text-gray-700">${product.price} × {product.quantity}</p>
-                  <div className="flex gap-2 mt-2">
+                  <p className="text-gray-700">${product.price}</p>
+                  <div className="flex gap-2 mt-2 text-white font-bold">
                     <button
-                      className="bg-yellow-500 px-2 rounded text-black font-bold"
+                      className="bg-black px-2 rounded"
                       onClick={() => handleDecrease(product.id)}
                     >
                       -
                     </button>
-                    <span className="px-2">{product.quantity}</span>
+                    <span className="px-2 text-yellow-800">
+                      {product.quantity}
+                    </span>
                     <button
-                      className="bg-green-500 px-2 rounded text-white font-bold"
+                      className="bg-yellow-500 px-2 rounded"
                       onClick={() => handleIncrease(product.id)}
                     >
                       +
@@ -80,26 +94,36 @@ function Cart() {
                   </div>
                 </div>
                 <button
-                  className="bg-red-500 text-white px-4 py-1 rounded"
+                  className="px-4 mb-8"
                   onClick={() => handleRemoveProduct(product.id)}
                 >
-                  Remove
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <Summ totalPrice={totalPrice} />
-        <button
-          onClick={handleCheckout}
-          className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-2 rounded"
-        >
-          Checkout
-        </button>
-      </div>
-      <Footer />
-    </div>
-  );
-}
-
-export default Cart;
+                   <svg 
+            className="w-8 h-8 text-yellow-800" 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
+              d={product.id? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
+            />
+          </svg>
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <Summ subTotalPrice={subTotal} shipping={shipping} totalPrice={totalPrice} />
+              <button
+                onClick={handleCheckout}
+                className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-2 rounded"
+              >
+                Checkout
+              </button>
+            </div>
+          </div>
+        );
+      }
+      
+      export default Cart;
+      

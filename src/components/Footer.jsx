@@ -13,12 +13,22 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative static text-yellow bg-black">
+    <footer className="bottom-0 sticky text-black bg-yellow-400   left-0 w-full">
       <Container className="max-w-6xl mx-auto  flex flex-col md:flex-row   gap-6">
+
+
+      <div className='flex flex-row'>
+       <div className="flex flex-col  md:items-start px-20">
+          <img src={logo} alt="Shaba Logo" className="h-10 w-auto mb-4" />
+          <a href="#" className="text-gray-400 hover:text-white">
+            Privacy Policy
+          </a>
+        </div>
+
         <div className="flex flex-row p-l-25">
           <Button
             onClick={handleOpenSearch}
-            className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mb-4"
+            className="bg-blue-500 hover:bg-blue-700 text-white  px-4 rounded p-16"
           >
             Find
           </Button>
@@ -28,16 +38,8 @@ const Footer = () => {
         </div>
 
        
-       <div className='flex flex-row'>
-       <div className="flex flex-col  md:items-start">
-          <img src={logo} alt="Shaba Logo" className="h-10 w-auto mb-4" />
-          <a href="#" className="text-gray-400 hover:text-white">
-            Privacy Policy
-          </a>
-        </div>
 
-    
-        <div className='justify-end flex flex-col gap-6 justify-end'>
+        <div className='justify-end flex flex-col gap-6 justify-end px-20 '>
           <div className="flex space-x-4 ">
           <a href="#" className="text-gray-400 hover:text-white text-2xl">
             <FaFacebook />

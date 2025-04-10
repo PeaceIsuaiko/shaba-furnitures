@@ -1,17 +1,18 @@
 import React from 'react';
 
-function Summ({ totalPrice }) {
+function Summ({ subTotalPrice, shipping, totalPrice }) {
   return (
-    <div>
-      <h2>Order Summary</h2>
-      <div>
-        <p>Subtotal: ${totalPrice}</p>
-        <p>Shipping: $0.00</p>
+    <div className="flex flex-col gap-6 px-5 py-6">
+      <h2 className="font-bold">Order Summary</h2>
+      <div className="flex flex-col">
+        <p>Subtotal: ${subTotalPrice}</p>
+        <p>Shipping: ${shipping}</p>
         <p>Total Price: ${totalPrice}</p>
       </div>
-      <p>Review your order summary</p>
+      <p className="text-yellow-800">Review your order before checking out!</p>
     </div>
   );
 }
 
 export default Summ;
+
