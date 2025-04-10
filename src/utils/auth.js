@@ -1,4 +1,4 @@
-// authentication.js
+
 const auth = {
     login: (email, password) => {
       const users = JSON.parse(localStorage.getItem('users')) || [];

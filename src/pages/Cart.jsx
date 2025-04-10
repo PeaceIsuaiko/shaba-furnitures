@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Summ from '../components/Summ';
+import Button from '../components/Button'
 import {
   getLocalCart,
   removeProductFromLocalCart,
@@ -20,6 +21,12 @@ function Cart() {
     updateTotal(cartData);
   }, []);
 
+  useEffect(() => {
+    const total = subTotal + shipping;
+    setTotalPrice(total);
+  }, [subTotal, shipping]);
+  
+
   const updateSubTotal = (cartData) => {
     const subTotal = cartData.reduce(
       (acc, product) => acc + product.price * product.quantity,
@@ -28,12 +35,11 @@ function Cart() {
     setSubTotal(subTotal);
   };
 
-  const updateShipping = (cartData) => {
-    const shipping = cartData.reduce((acc, product) =>
-       acc + product.price + 0.01,0);
-    setShipping(shipping);
+  const updateShipping = () => {
+    setShipping(10);
   };
-
+  
+  
   const updateTotal = (cartData) => {
     updateSubTotal(cartData);
     updateShipping(cartData);
@@ -114,12 +120,12 @@ function Cart() {
                 ))}
               </ul>
               <Summ subTotalPrice={subTotal} shipping={shipping} totalPrice={totalPrice} />
-              <button
+              <Button
                 onClick={handleCheckout}
-                className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-2 rounded"
+                className="mt-6  hover:bg-yellow-600 text-black px-9 py-2 rounded"
               >
                 Checkout
-              </button>
+              </Button>
             </div>
           </div>
         );

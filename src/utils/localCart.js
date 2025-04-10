@@ -1,5 +1,3 @@
-// utils/localCart.js
-
 export const getLocalCart = () => {
     return JSON.parse(localStorage.getItem('cart')) || [];
   };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '../components/Button';
 import axios from 'axios';
 
-function ResetPassword() {
+function Reset() {
   const [email, setEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -51,4 +51,4 @@ function ResetPassword() {
   );
 }
 
-export default ResetPassword;
+export default Reset;

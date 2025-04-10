@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ForgotPassword() {
+function Forgot() {
   return (
     <div>
       <div className="container mx-auto p-4 pt-6">
@@ -10,4 +10,4 @@ function ForgotPassword() {
   );
 }
 
-export default ForgotPassword;
+export default Forgot;

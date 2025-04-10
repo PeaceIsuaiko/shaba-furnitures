@@ -1,9 +1,8 @@
-// Register.js
 import React, { useState } from 'react';
 import Button from '../components/Button';
 import auth from '../utils/auth';
 
-function Register() {
+function Regis() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +12,7 @@ function Register() {
     e.preventDefault();
     try {
       if (auth.register({ name, email, password })) {
-        // Registration successful
+        
       } else {
         setError('Email already exists');
       }
@@ -50,4 +49,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Regis;
