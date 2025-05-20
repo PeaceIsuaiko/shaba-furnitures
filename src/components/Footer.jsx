@@ -25,10 +25,10 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="flex flex-row p-l-25">
+        <div className="flex flex-row">
           <Button
             onClick={handleOpenSearch}
-            className="bg-blue-500 hover:bg-blue-700 text-white  px-4 rounded p-16"
+            className="bg-blue-500 hover:bg-blue-700 "
           >
             Find
           </Button>

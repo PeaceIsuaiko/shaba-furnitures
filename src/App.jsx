@@ -1,38 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Products from './pages/Products';
-import ProductDetails from './pages/ProductDetails';
-import Cart from './pages/Cart';
-import Checkout from './components/Checkout';
-import OrderConfirmation from './pages/OrderConfirmation';
-import Reset from './pages/Reset';
+
+import Home from '../src/home/Home';
+import Products from '../src/products/Products';
+import ProductDetails from '../src/products/ProductDetails';
+import Cart from '../src/cart/Cart';
+import AdminBoard from '../src/admins/AdminBoard';
+import UserBoard from '../src/users/UserBoard';
+import Checkout from '../src/checkout/Checkout';
+import OrderConfirmation from '../src/cart/OrderConfirmation';
 import Private from './components/Private';
-import ProductSearch from './pages/ProductSearch';
-import AuthModal from './components/AuthModal';
+import ProductSearch from '../src/products/ProductSearch';
+import Auth from '../src/auths/Auth'; // auth modal/page component
+import Modal from './components/Modal'; // assume you have this modal
+// OR just use <Auth /> directly for modal if modal is not a separate file
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const user = localStorage.getItem('authenticated');
-    if (user) {
+    if (user === 'true') {
       setAuthenticated(true);
     } else {
-      setShowAuthModal(true);
+      setShowModal(true);
     }
   }, []);
 
   const handleAuthSuccess = () => {
-    localStorage.setItem('authenticated', true);
+    localStorage.setItem('authenticated', 'true');
     setAuthenticated(true);
-    setShowAuthModal(false);
+    setShowModal(false);
   };
 
   return (
     <BrowserRouter>
-      {showAuthModal && <AuthModal onAuthSuccess={handleAuthSuccess} />}
+      {showModal && <Auth onAuthSuccess={handleAuthSuccess} />}
 
       <Routes>
         <Route
@@ -48,6 +52,30 @@ function App() {
           element={
             <Private isAuthenticated={authenticated}>
               <Products />
+            </Private>
+          }
+        />
+        <Route
+          path="/auths"
+          element={
+            <Private isAuthenticated={authenticated}>
+              <Auth />
+            </Private>
+          }
+        />
+        <Route
+          path="/admins"
+          element={
+            <Private isAuthenticated={authenticated}>
+              <AdminBoard />
+            </Private>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <Private isAuthenticated={authenticated}>
+              <UserBoard />
             </Private>
           }
         />
@@ -91,7 +119,6 @@ function App() {
             </Private>
           }
         />
-        <Route path="/reset-password" element={<Reset />} />
       </Routes>
     </BrowserRouter>
   );

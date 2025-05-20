@@ -10,9 +10,11 @@ function Navbar() {
         
 
         <div className={`absolute md:static top-1 right-0 text-black w-48 md:w-auto py-2 md:py-0 md:flex md:space-x-6  rounded-lg md:rounded-none ${isOpen ? "block" : "hidden"} md:block`}>
-          <Link to="/" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">Home</Link>
-          <Link to="/products" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">Products</Link>
-          <Link to="/cart" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 md:hover:bg-transparent">🛒</Link>
+          <Link to="/" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700  hover:text-white md:hover:bg-transparent">Home</Link>
+          <Link to="/admins" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Admin</Link>
+          <Link to="/users" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Profile</Link>
+          <Link to="/products" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Products</Link>
+          <Link to="/cart" className="block px-4 py-2 md:px-0 md:py-0 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">🛒</Link>
         </div>
 
    
